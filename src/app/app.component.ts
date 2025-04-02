@@ -8,8 +8,6 @@ import { CommonModule } from '@angular/common';
 
 
 
-
-
 @Component({
   selector: 'app-root',
   imports: [HeaderComponent, UserComponent, TasksComponent, CommonModule],
@@ -28,17 +26,45 @@ export class AppComponent {
     this.selectedUserId = id;
   }
 
- constructor(private http : HttpClient){
+  constructor(private http : HttpClient){
 
- }
+  }
 
-data:any;
+  data:any;
 
- getData(){
-  this.http.get('https://fakestoreapi.com/products?limit=5')
-  .subscribe((data)=>{
-    
+  getData(){
+    this.http.get('https://fakestoreapi.com/products?limit=5')
+    .subscribe((data)=>{
     this.data = data
   })
  }
+
+ setSession(){
+  sessionStorage.setItem('userId', "adminUser");
+  sessionStorage.setItem('username',"manoj1718")
+ }
+
+ getSession(){
+  console.log(sessionStorage.getItem('username'));
+  console.log(sessionStorage.getItem('userId'));
+ }
+
+ remove(){
+  sessionStorage.clear();
+ }
+
+ setLocal(){
+  localStorage.setItem('username', "manoj1111");
+  localStorage.setItem('userId',"Ma1234");
+ }
+ 
+ getLocal(){
+  console.log(localStorage.getItem('username'));
+  console.log(localStorage.getItem('userId'));
+ }
+
+ removeLocal(){
+  localStorage.clear();
+ }
+ 
 }

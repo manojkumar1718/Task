@@ -38,3 +38,22 @@ main {
       text-align: left;
     }
   }
+  button{
+    border: none;
+    outline: none;
+    background-color: rgb(84, 84, 166);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 5px;
+    
+  }
+  table {
+    border-collapse: collapse; /* Ensures borders don't double up */
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid white; /* Adds a border to table cells */
+    padding: 8px; /* Adds spacing inside cells */
+    text-align: left;
+  }
